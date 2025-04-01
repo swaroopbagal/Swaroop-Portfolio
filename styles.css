@@ -1,0 +1,310 @@
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --primary-dark: #3a0ca3;
+  --secondary: #f72585;
+  --dark: #121212;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  padding-top: 70px;
+  background-color: white;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.dark-mode {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Particles Background */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 50, 50, 0.15);
+  filter: blur(20px);
+  animation: float 25s infinite linear;
+  opacity: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 120vh) scale(0.5);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(100vw, -20vh) scale(1);
+    opacity: 0;
+  }
+}
+
+.dark-mode .particle {
+  background: rgba(255, 50, 50, 0.1);
+  filter: blur(25px);
+}
+
+/* Navigation */
+.navbar {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.dark-mode .navbar {
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-mode .hero {
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: var(--primary);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+/* Work Section */
+.project-item {
+  transition: transform 0.3s ease;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+}
+
+.project-image {
+  height: 300px;
+  background-color: rgba(67, 97, 238, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-item:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-image i {
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.project-link {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  color: var(--secondary);
+  padding-left: 5px;
+}
+
+.tech-badge {
+  background-color: rgba(67, 97, 238, 0.1);
+  color: var(--primary);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.dark-mode .tech-badge {
+  background-color: rgba(72, 149, 239, 0.2);
+}
+
+/* About Section */
+.about-section {
+  background-color: #f8f9fa;
+}
+
+.dark-mode .about-section {
+  background-color: #1e1e1e;
+}
+
+.skill-card {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+/* Contact Section */
+.contact-card {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+}
+
+.dark-mode footer {
+  background-color: #121212;
+}
+
+.social-icon {
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary);
+  transform: translateY(-5px);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  background-color: var(--secondary);
+  transform: translateY(-5px);
+}
+
+/* Animations */
+[data-aos] {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+[data-aos="zoom-in"].aos-animate {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .project-item, .project-item.flex-lg-row-reverse {
+    flex-direction: column;
+  }
+  
+  .project-image {
+    margin-top: 20px;
+  }
+}
